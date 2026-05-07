@@ -23,6 +23,12 @@ const jsPsych = initJsPsych({
   preload_images: image_files,
 });
 
+const preload = {
+  type: jsPsychPreload,
+  images: image_files,
+  continue_after_error: true
+};
+
 // ------------------------------
 // 3. RANDOMIZATION
 // ------------------------------
@@ -627,6 +633,7 @@ const save_local = {
 // TIMELINE
 // ------------------------------
 jsPsych.run([
+  preload,
   welcome,
   consent,
   enter_fullscreen,
